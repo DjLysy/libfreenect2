@@ -26,6 +26,7 @@
 
 
 #include <iostream>
+#include <unistd.h>
 #include <signal.h>
 
 #include <opencv2/opencv.hpp>
@@ -56,6 +57,7 @@ int main(int argc, char *argv[])
 
   libfreenect2::Freenect2 freenect2;
   libfreenect2::Freenect2Device *dev = freenect2.openDefaultDevice();
+  sleep(2);
 
   if(dev == 0)
   {
@@ -72,6 +74,7 @@ int main(int argc, char *argv[])
   dev->setColorFrameListener(&listener);
   dev->setIrAndDepthFrameListener(&listener);
   dev->start();
+  sleep(5);
 
   std::cout << "device serial: " << dev->getSerialNumber() << std::endl;
   std::cout << "device firmware: " << dev->getFirmwareVersion() << std::endl;

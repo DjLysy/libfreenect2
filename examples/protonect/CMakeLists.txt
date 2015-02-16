@@ -8,6 +8,7 @@ SET(MY_DIR ${libfreenect2_SOURCE_DIR})
 OPTION(ENABLE_CXX11 "Enable C++11 support" OFF)
 OPTION(ENABLE_OPENCL "Enable OpenCL support" ON)
 OPTION(ENABLE_OPENGL "Enable OpenGL support" ON)
+OPTION(FORCE_CXX11_THREADING "Force C++11 threading" ON)
 
 IF(ENABLE_CXX11)
   INCLUDE(CheckCXXCompilerFlag)
